@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#111;font-family:'IBM Plex Sans',sans-serif}a{color:#B8561B}a:hover{color:#8A3E10}</style>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#171716"></rect><rect x="30" y="30" width="40" height="40" fill="#E8913A"></rect></svg></template>
+</helmet>
+<x-import component-from-global-scope="deck-stage" from="./deck-stage.js" width="1920" height="1080" hint-size="100%,100%">
+
+<section data-label="Title" data-screen-label="01" data-speaker-notes="Introduce yourself, your station, and the issue in one sentence." style="background:#171716;color:#F3F2EE;padding:120px 140px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:space-between;font-family:'IBM Plex Sans',sans-serif">
+  <div style="display:flex;gap:24px;align-items:center;font-family:'IBM Plex Mono',monospace;font-size:26px;letter-spacing:0.08em;color:#A9A7A0">
+    <span style="width:18px;height:18px;background:oklch(0.72 0.17 55)"></span>
+    <span>PROCESS ISSUE REPORT</span><span>·</span><span>FINAL LINE 2</span>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:40px">
+    <h1 style="margin:0;font-size:104px;line-height:1.02;font-weight:600;letter-spacing:-0.02em;max-width:1600px;text-wrap:pretty">Station 2: LHD / RHD mix-ups and false scans</h1>
+    <div style="display:flex;flex-direction:column;gap:18px;max-width:1500px">
+      <div style="display:grid;grid-template-columns:48px 1fr;gap:22px;align-items:center;font-size:32px;line-height:1.3"><span style="width:48px;height:48px;border-radius:50%;background:oklch(0.56 0.21 27);color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:26px">1</span><span><b style="font-weight:600;color:#F3F2EE">Monitor colours look alike.</b> <span style="color:#B5B3AC">LHD yellow and RHD green are hard to tell apart.</span></span></div>
+      <div style="display:grid;grid-template-columns:48px 1fr;gap:22px;align-items:center;font-size:32px;line-height:1.3"><span style="width:48px;height:48px;border-radius:50%;background:oklch(0.56 0.21 27);color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:26px">2</span><span><b style="font-weight:600;color:#F3F2EE">No warning before an RHD car.</b> <span style="color:#B5B3AC">The operator finds out when the car arrives.</span></span></div>
+      <div style="display:grid;grid-template-columns:48px 1fr;gap:22px;align-items:center;font-size:32px;line-height:1.3"><span style="width:48px;height:48px;border-radius:50%;background:oklch(0.56 0.21 27);color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:26px">3</span><span><b style="font-weight:600;color:#F3F2EE">Early scans buzz but don’t register.</b> <span style="color:#B5B3AC">Scanning before the previous car leaves looks successful.</span></span></div>
+      <div style="display:grid;grid-template-columns:48px 1fr;gap:22px;align-items:center;font-size:32px;line-height:1.3"><span style="width:48px;height:48px;border-radius:50%;background:oklch(0.56 0.21 27);color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:26px">4</span><span><b style="font-weight:600;color:#F3F2EE">Wrong part buzzes like a right one.</b> <span style="color:#B5B3AC">No warning on screen.</span></span></div>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(4,auto);justify-content:start;gap:120px;font-size:28px;border-top:1px solid #3A3936;padding-top:40px">
+    <div style="display:flex;flex-direction:column;gap:8px"><span style="font-family:'IBM Plex Mono',monospace;font-size:22px;color:#8E8C85;letter-spacing:0.06em">REPORTED BY</span><span>Ritwika Mondal</span></div>
+    <div style="display:flex;flex-direction:column;gap:8px"><span style="font-family:'IBM Plex Mono',monospace;font-size:22px;color:#8E8C85;letter-spacing:0.06em">SUPERVISOR</span><span>Koray Bastug</span></div>
+    <div style="display:flex;flex-direction:column;gap:8px"><span style="font-family:'IBM Plex Mono',monospace;font-size:22px;color:#8E8C85;letter-spacing:0.06em">FOR</span><span>Engineering team</span></div>
+    <div style="display:flex;flex-direction:column;gap:8px"><span style="font-family:'IBM Plex Mono',monospace;font-size:22px;color:#8E8C85;letter-spacing:0.06em">STATUS</span><span style="color:oklch(0.78 0.16 55)">Ongoing</span></div>
+  </div>
+</section>
+
+<section data-label="Problem" data-screen-label="02" data-speaker-notes="Four problems at my station. Problems 1 and 2 are about the monitor. Problems 3 and 4 are about the hand scanner. Each one gets its own fix at the end." style="background:#F4F3EF;color:#1A1A18;padding:110px 140px;box-sizing:border-box;display:flex;flex-direction:column;gap:56px;font-family:'IBM Plex Sans',sans-serif">
+  <div style="display:flex;flex-direction:column;gap:28px">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:26px;letter-spacing:0.08em;color:#B8561B">01 — PROBLEM STATEMENT</span>
+    <h2 style="margin:0;font-size:72px;line-height:1.08;font-weight:600;letter-spacing:-0.015em">Four problems at Station 2</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:16px 48px;font-size:28px;color:#4A4945">
+      <span><span style="font-family:'IBM Plex Mono',monospace;font-size:22px;color:#77756F">LINE </span>Final Line 2</span>
+      <span><span style="font-family:'IBM Plex Mono',monospace;font-size:22px;color:#77756F">STATION </span>2 · B-pillar, LH side</span>
+      <span><span style="font-family:'IBM Plex Mono',monospace;font-size:22px;color:#77756F">OPERATION </span>Fit camera panel (part changes with LHD / RHD)</span>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;flex:1">
+    <div style="background:#FFFFFF;border:1px solid #D6D4CD;border-top:8px solid oklch(0.56 0.21 27);padding:40px 32px;display:flex;flex-direction:column;gap:22px">
+      <div style="display:flex;gap:18px;align-items:center"><span style="width:56px;height:56px;flex:none;border-radius:50%;background:oklch(0.56 0.21 27);color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:30px">1</span><span style="font-family:'IBM Plex Mono',monospace;font-size:22px;letter-spacing:0.08em;color:oklch(0.48 0.19 27)">PROBLEM 1</span></div>
+      <span style="font-size:36px;font-weight:600;line-height:1.15;text-wrap:pretty">LHD and RHD colours look alike</span>
+      <span style="font-size:26px;line-height:1.45;color:#4A4945;text-wrap:pretty">On the monitor, LHD is yellow and RHD is green. From a distance they are hard to tell apart.</span>
+      <span style="margin-top:auto;font-family:'IBM Plex Mono',monospace;font-size:20px;color:#77756F">MONITOR · SLIDES 5–6</span>
+    </div>
+    <div style="background:#FFFFFF;border:1px solid #D6D4CD;border-top:8px solid oklch(0.56 0.21 27);padding:40px 32px;display:flex;flex-direction:column;gap:22px">
+      <div style="display:flex;gap:18px;align-items:center"><span style="width:56px;height:56px;flex:none;border-radius:50%;background:oklch(0.56 0.21 27);color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:30px">2</span><span style="font-family:'IBM Plex Mono',monospace;font-size:22px;letter-spacing:0.08em;color:oklch(0.48 0.19 27)">PROBLEM 2</span></div>
+      <span style="font-size:36px;font-weight:600;line-height:1.15;text-wrap:pretty">No warning before an RHD car</span>
+      <span style="font-size:26px;line-height:1.45;color:#4A4945;text-wrap:pretty">The monitor shows only the current car. The operator finds out about an RHD car when it arrives.</span>
+      <span style="margin-top:auto;font-family:'IBM Plex Mono',monospace;font-size:20px;color:#77756F">MONITOR · SLIDES 3–6</span>
+    </div>
+    <div style="background:#FFFFFF;border:1px solid #D6D4CD;border-top:8px solid oklch(0.56 0.21 27);padding:40px 32px;display:flex;flex-direction:column;gap:22px">
+      <div style="display:flex;gap:18px;align-items:center"><span style="width:56px;height:56px;flex:none;border-radius:50%;background:oklch(0.56 0.21 27);color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:30px">3</span><span style="font-family:'IBM Plex Mono',monospace;font-size:22px;letter-spacing:0.08em;color:oklch(0.48 0.19 27)">PROBLEM 3</span></div>
+      <span style="font-size:36px;font-weight:600;line-height:1.15;text-wrap:pretty">Early scan buzzes but doesn’t register</span>
+      <span style="font-size:26px;line-height:1.45;color:#4A4945;text-wrap:pretty">Scanning before the previous car has left still buzzes, but the scan is not saved for the car.</span>
+      <span style="margin-top:auto;font-family:'IBM Plex Mono',monospace;font-size:20px;color:#77756F">HAND SCANNER · SLIDES 7–8</span>
+    </div>
+    <div style="background:#FFFFFF;border:1px solid #D6D4CD;border-top:8px solid oklch(0.56 0.21 27);padding:40px 32px;display:flex;flex-direction:column;gap:22px">
+      <div style="display:flex;gap:18px;align-items:center"><span style="width:56px;height:56px;flex:none;border-radius:50%;background:oklch(0.56 0.21 27);color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:30px">4</span><span style="font-family:'IBM Plex Mono',monospace;font-size:22px;letter-spacing:0.08em;color:oklch(0.48 0.19 27)">PROBLEM 4</span></div>
+      <span style="font-size:36px;font-weight:600;line-height:1.15;text-wrap:pretty">Wrong part buzzes like a right one</span>
+      <span style="font-size:26px;line-height:1.45;color:#4A4945;text-wrap:pretty">Same vibration for a right or wrong part, and the screen shows no warning.</span>
+      <span style="margin-top:auto;font-family:'IBM Plex Mono',monospace;font-size:20px;color:#77756F">HAND SCANNER · SLIDE 9</span>
+    </div>
+  </div>
+</section>
+
+<section data-label="Workflow" data-screen-label="03" data-speaker-notes="I am fitting the current car (LHD). The next car enters the line and is registered. If it is RHD, my monitor shows the current car and a pop-up for the next RHD car, before it reaches me. If it is LHD, no pop-up." style="background:#F4F3EF;color:#1A1A18;padding:96px 140px;box-sizing:border-box;display:flex;flex-direction:column;gap:44px;font-family:'IBM Plex Sans',sans-serif">
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:40px">
+    <div style="display:flex;flex-direction:column;gap:24px">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:26px;letter-spacing:0.08em;color:#B8561B">02 — PROPOSED WORKFLOW · SOLUTION 2</span>
+      <h2 style="margin:0;font-size:64px;line-height:1.08;font-weight:600;letter-spacing:-0.015em">RHD car registered at line entry → pop-up at Station 2</h2>
+    </div>
+    {{ wfCaption }}
+  </div>
+  <div style="position:relative;width:1640px;height:210px;overflow:hidden">
+    <span style="position:absolute;left:0px;top:0;font-family:'IBM Plex Mono',monospace;font-size:20px;letter-spacing:0.06em;color:#4A4945;">LINE ENTRY</span>
+    <div style="position:absolute;left:0px;top:30px;width:380px;height:170px;background:#ECEBE6;box-sizing:border-box"></div>
+    <span style="position:absolute;left:420px;top:0;font-family:'IBM Plex Mono',monospace;font-size:20px;letter-spacing:0.06em;color:#4A4945;">PREVIOUS STATION</span>
+    <div style="position:absolute;left:420px;top:30px;width:380px;height:170px;background:#ECEBE6;box-sizing:border-box"></div>
+    <span style="position:absolute;left:840px;top:0;font-family:'IBM Plex Mono',monospace;font-size:20px;letter-spacing:0.06em;color:#1A1A18;font-weight:500;">STATION 2 · MY STATION</span>
+    <div style="position:absolute;left:840px;top:30px;width:400px;height:170px;background:#ECEBE6;border:2px solid #1A1A18;box-sizing:border-box"></div>
+    <span style="position:absolute;left:386px;top:96px;font-size:30px;color:#77756F">›</span>
+    <span style="position:absolute;left:806px;top:96px;font-size:30px;color:#77756F">›</span>
+    <div style="position:absolute;left:920px;top:66px;width:240px;height:76px;border-radius:12px;background:oklch(0.6 0.17 255);color:#FFFFFF;display:flex;align-items:center;justify-content:center;gap:10px;font-size:26px;font-weight:700;border:3px solid #1A1A18;box-sizing:border-box"><span style="font-family:'IBM Plex Mono',monospace;font-size:18px;font-weight:500">CURRENT</span>LHD</div>
+    <span style="position:absolute;left:920px;top:160px;width:240px;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:18px;color:#4A4945">I'm fitting this car</span>
+    <div style="position:absolute;left:1290px;top:0;width:350px;height:210px;box-sizing:border-box;background:#0F1012;border:10px solid #2A2B2E;border-radius:10px;padding:14px 18px;display:flex;flex-direction:column;gap:10px;color:#E8E8E6">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:18px;color:#8A8B8F">STATION 2 MONITOR</span>
+      <div style="display:flex;gap:12px;align-items:center;font-size:22px"><span style="color:#8A8B8F;width:84px">Current</span><span style="background:oklch(0.6 0.17 255);color:#FFFFFF;font-weight:700;padding:2px 12px">LHD</span></div>
+      <div style="flex:1;border:2px dashed #3A3B3F"></div>
+    </div>
+    {{ wfLine }}
+  </div>
+  <div style="position:relative;width:1640px;height:380px">
+    <svg width="1640" height="380" style="position:absolute;inset:0">
+      <defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#1A1A18"></path></marker></defs>
+      <g stroke="#1A1A18" stroke-width="3" fill="none" marker-end="url(#ah)">
+        <path d="M260 190H306"></path><path d="M590 190H636"></path>
+        <path d="M780 120V55H976"></path><path d="M780 260V325H976"></path>
+        <path d="M1310 55H1500V131"></path><path d="M1310 325H1500V249"></path>
+      </g>
+    </svg>
+    <div style="position:absolute;left:0px;top:135px;width:260px;height:110px;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:12px 16px;gap:4px;line-height:1.25;background:#FFFFFF;border:2px solid #1A1A18"><span style="font-size:26px;font-weight:600">Car enters the line</span></div>
+    <div style="position:absolute;left:310px;top:135px;width:280px;height:110px;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:12px 16px;gap:4px;line-height:1.25;background:#FFFFFF;border:2px solid #1A1A18"><span style="font-size:26px;font-weight:600">Registered as LHD or RHD</span></div>
+    <div style="position:absolute;left:640px;top:120px;width:280px;height:140px;background:#1A1A18;clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);display:flex;align-items:center;justify-content:center;text-align:center;color:#F3F2EE;font-size:28px;font-weight:600">RHD?</div>
+    <span style="position:absolute;left:794px;top:70px;font-family:'IBM Plex Mono',monospace;font-size:22px;font-weight:500;color:oklch(0.5 0.15 150)">YES</span>
+    <span style="position:absolute;left:794px;top:284px;font-family:'IBM Plex Mono',monospace;font-size:22px;font-weight:500;color:#77756F">NO · LHD</span>
+    <div style="position:absolute;left:980px;top:0px;width:330px;height:110px;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:12px 16px;gap:4px;line-height:1.25;background:#0F1012;color:#F3F2EE;border:3px solid oklch(0.74 0.17 150)"><span style="font-size:26px;font-weight:600">Pop-up at Station 2</span><span style="font-size:21px;color:#C9C9C6">Before the car arrives</span></div>
+    <div style="position:absolute;left:980px;top:270px;width:330px;height:110px;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:12px 16px;gap:4px;line-height:1.25;background:#FFFFFF;border:2px dashed #77756F"><span style="font-size:26px;font-weight:600">No pop-up</span><span style="font-size:21px;color:#4A4945">Normal display</span></div>
+    <div style="position:absolute;left:1360px;top:135px;width:280px;height:110px;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:12px 16px;gap:4px;line-height:1.25;background:#1A1A18;color:#F3F2EE"><span style="font-size:26px;font-weight:600">Car reaches Station 2</span><span style="font-size:21px;color:#C9C7C0">Fit the correct panel</span></div>
+    {{ wfChart }}
+  </div>
+</section>
+
+<section data-label="Current flow" data-screen-label="04" data-speaker-notes="Walk through what happens today, step by step. The gap is between step 1 and step 2." style="background:#F4F3EF;color:#1A1A18;padding:120px 140px;box-sizing:border-box;display:flex;flex-direction:column;gap:80px;font-family:'IBM Plex Sans',sans-serif">
+  <div style="display:flex;flex-direction:column;gap:32px">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:26px;letter-spacing:0.08em;color:#B8561B">03 — CURRENT FLOW · PROBLEM 2</span>
+    <h2 style="margin:0;font-size:72px;line-height:1.08;font-weight:600;letter-spacing:-0.015em">The variant is discovered too late</h2>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;flex:1">
+    <div style="background:#FFFFFF;border:1px solid #D6D4CD;padding:48px 40px;display:flex;flex-direction:column;gap:28px"><span style="font-family:'IBM Plex Mono',monospace;font-size:28px;color:#77756F">01</span><span style="font-size:38px;font-weight:600;line-height:1.2">Car moves into Station 2</span><span style="font-size:28px;line-height:1.45;color:#4A4945">Monitor shows no drive-side change coming.</span></div>
+    <div style="background:#1A1A18;color:#F3F2EE;padding:48px 40px;display:flex;flex-direction:column;gap:28px"><span style="font-family:'IBM Plex Mono',monospace;font-size:28px;color:oklch(0.78 0.16 55)">02 · GAP</span><span style="font-size:38px;font-weight:600;line-height:1.2">Operator sees it's RHD (or LHD)</span><span style="font-size:28px;line-height:1.45;color:#C9C7C0">Realised only by looking at the car itself.</span></div>
+    <div style="background:#FFFFFF;border:1px solid #D6D4CD;padding:48px 40px;display:flex;flex-direction:column;gap:28px"><span style="font-family:'IBM Plex Mono',monospace;font-size:28px;color:#77756F">03</span><span style="font-size:38px;font-weight:600;line-height:1.2">Switch to the correct panel</span><span style="font-size:28px;line-height:1.45;color:#4A4945">Time lost inside the cycle to find the other part.</span></div>
+    <div style="background:#FFFFFF;border:1px solid #D6D4CD;padding:48px 40px;display:flex;flex-direction:column;gap:28px"><span style="font-family:'IBM Plex Mono',monospace;font-size:28px;color:#77756F">04</span><span style="font-size:38px;font-weight:600;line-height:1.2">Install under time pressure</span><span style="font-size:28px;line-height:1.45;color:#4A4945">Higher risk of wrong part or rushed fitment.</span></div>
+  </div>
+</section>
+
+<section data-label="Current monitor" data-screen-label="05" data-speaker-notes="The monitor shows the current car only: variant, variant name, cycle time. LHD is shown in yellow and RHD in green. From a distance these two look too similar." style="background:#F4F3EF;color:#1A1A18;padding:120px 140px;box-sizing:border-box;display:grid;grid-template-columns:0.85fr 1.15fr;gap:96px;font-family:'IBM Plex Sans',sans-serif">
+  <div style="display:flex;flex-direction:column;gap:40px">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:26px;letter-spacing:0.08em;color:#B8561B">04 — CURRENT MONITOR · PROBLEMS 1 &amp; 2</span>
+    <h2 style="margin:0;font-size:68px;line-height:1.08;font-weight:600;letter-spacing:-0.015em;text-wrap:pretty">LHD and RHD colours are too similar to tell apart</h2>
+    <div style="display:flex;flex-direction:column;gap:28px;font-size:30px;line-height:1.45;color:#4A4945">
+      <p style="margin:0">The screen shows the current car only: variant, variant name and cycle time.</p>
+      <div style="display:grid;grid-template-columns:48px 1fr;gap:20px;align-items:start;background:#FBE9E6;padding:24px 28px;color:#1A1A18"><span style="width:48px;height:48px;border-radius:50%;background:oklch(0.56 0.21 27);color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:28px">1</span><span><b style="font-weight:600;color:oklch(0.48 0.19 27)">Colours too similar.</b> LHD is yellow and RHD is green, neighbouring colours that are hard to tell apart from a distance.</span></div>
+      <div style="display:grid;grid-template-columns:48px 1fr;gap:20px;align-items:start;background:#FBE9E6;padding:24px 28px;color:#1A1A18"><span style="width:48px;height:48px;border-radius:50%;background:oklch(0.56 0.21 27);color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:28px">2</span><span><b style="font-weight:600;color:oklch(0.48 0.19 27)">No next-car warning.</b> The screen gives no information about the next car.</span></div>
+    </div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:32px;justify-content:center">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px">
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div style="background:#0F1012;border:14px solid #2A2B2E;border-radius:10px;padding:36px 32px;display:flex;flex-direction:column;gap:28px;color:#E8E8E6">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:22px;letter-spacing:0.08em;color:#8A8B8F">CURRENT VEHICLE</span>
+          <div style="background:oklch(0.84 0.16 100);color:#141414;font-size:72px;font-weight:700;padding:20px 28px;letter-spacing:0.02em;outline:6px solid oklch(0.62 0.22 27);outline-offset:8px;display:flex;justify-content:space-between;align-items:center"><span>LHD</span><span style="width:48px;height:48px;border-radius:50%;background:oklch(0.56 0.21 27);color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:28px">1</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px"><span style="font-family:'IBM Plex Mono',monospace;font-size:20px;color:#8A8B8F">VARIANT NAME</span><span style="font-size:30px">[LHD variant name]</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px"><span style="font-family:'IBM Plex Mono',monospace;font-size:20px;color:#8A8B8F">CYCLE TIME</span><span style="font-size:30px;font-family:'IBM Plex Mono',monospace">[mm:ss]</span></div>
+        </div>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:24px;color:#4A4945">LHD → yellow</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div style="background:#0F1012;border:14px solid #2A2B2E;border-radius:10px;padding:36px 32px;display:flex;flex-direction:column;gap:28px;color:#E8E8E6">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:22px;letter-spacing:0.08em;color:#8A8B8F">CURRENT VEHICLE</span>
+          <div style="background:oklch(0.82 0.16 130);color:#141414;font-size:72px;font-weight:700;padding:20px 28px;letter-spacing:0.02em;outline:6px solid oklch(0.62 0.22 27);outline-offset:8px;display:flex;justify-content:space-between;align-items:center"><span>RHD</span><span style="width:48px;height:48px;border-radius:50%;background:oklch(0.56 0.21 27);color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:28px">1</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px"><span style="font-family:'IBM Plex Mono',monospace;font-size:20px;color:#8A8B8F">VARIANT NAME</span><span style="font-size:30px">[RHD variant name]</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px"><span style="font-family:'IBM Plex Mono',monospace;font-size:20px;color:#8A8B8F">CYCLE TIME</span><span style="font-size:30px;font-family:'IBM Plex Mono',monospace">[mm:ss]</span></div>
+        </div>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:24px;color:#4A4945">RHD → green</span>
+      </div>
+    </div>
+    <div style="border:4px dashed oklch(0.62 0.22 27);background:#FBE9E6;padding:24px 28px;display:flex;gap:20px;align-items:center;font-size:30px;font-weight:600;color:oklch(0.48 0.19 27)"><span style="width:48px;height:48px;flex:none;border-radius:50%;background:oklch(0.56 0.21 27);color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:28px">2</span>NEXT CAR: not shown. No warning before a drive-side change.</div>
+    <div style="display:flex;gap:20px;align-items:center;border-top:2px solid oklch(0.56 0.21 27);padding-top:24px;font-size:28px">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:22px;letter-spacing:0.06em;color:#77756F;white-space:nowrap">FROM A DISTANCE</span>
+      <span style="width:120px;height:44px;background:oklch(0.84 0.16 100)"></span>
+      <span style="width:120px;height:44px;background:oklch(0.82 0.16 130)"></span>
+      <span style="color:oklch(0.48 0.19 27);font-weight:600">✕ Same colour family, easy to confuse</span>
+    </div>
+  </div>
+</section>
+
+<section data-label="Proposed monitor" data-screen-label="06" data-speaker-notes="Two changes: give LHD and RHD colours from different families (blue and green), and add a segment showing the next car's drive side so the operator can prepare the right part in advance." style="background:#F4F3EF;color:#1A1A18;padding:120px 140px;box-sizing:border-box;display:grid;grid-template-columns:0.85fr 1.15fr;gap:96px;font-family:'IBM Plex Sans',sans-serif">
+  <div style="display:flex;flex-direction:column;gap:40px">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:26px;letter-spacing:0.08em;color:#B8561B">05 — PROPOSED · SOLUTIONS 1 &amp; 2</span>
+    <h2 style="margin:0;font-size:68px;line-height:1.08;font-weight:600;letter-spacing:-0.015em;text-wrap:pretty">Distinct colours and a heads-up for the next car</h2>
+    <div style="display:flex;flex-direction:column;border-top:2px solid #1A1A18">
+      <div style="display:grid;grid-template-columns:48px 1fr;gap:20px;align-items:start;padding:28px;margin-top:24px;background:#E6EFE8;font-size:30px;line-height:1.4"><span style="width:48px;height:48px;border-radius:50%;background:#1A1A18;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:28px">1</span><span><b style="font-weight:600">Blue for LHD, green for RHD.</b> Different colour families, readable from a distance.</span></div>
+      <div style="display:grid;grid-template-columns:48px 1fr;gap:20px;align-items:start;padding:28px;margin-top:16px;background:#E6EFE8;font-size:30px;line-height:1.4"><span style="width:48px;height:48px;border-radius:50%;background:#1A1A18;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:28px">2</span><span><b style="font-weight:600">"Next model" segment or pop-up.</b> Shows before an RHD car arrives, so the right panel is ready in time.</span></div>
+    </div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:32px;justify-content:center">
+    <div style="background:#0F1012;border:14px solid #2A2B2E;border-radius:10px;padding:40px;display:grid;grid-template-columns:1.4fr 1fr;gap:36px;color:#E8E8E6">
+      <div style="display:flex;flex-direction:column;gap:28px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:22px;letter-spacing:0.08em;color:#8A8B8F">CURRENT VEHICLE</span>
+        <div style="background:oklch(0.6 0.17 255);color:#FFFFFF;font-size:84px;font-weight:700;padding:22px 30px;letter-spacing:0.02em;outline:6px solid #FFFFFF;outline-offset:8px;display:flex;justify-content:space-between;align-items:center"><span>LHD</span><span style="width:52px;height:52px;border-radius:50%;background:#FFFFFF;color:#1A1A18;display:flex;align-items:center;justify-content:center;font-size:30px">1</span></div>
+        <div style="display:flex;flex-direction:column;gap:6px"><span style="font-family:'IBM Plex Mono',monospace;font-size:20px;color:#8A8B8F">VARIANT NAME</span><span style="font-size:30px">[LHD variant name]</span></div>
+        <div style="display:flex;flex-direction:column;gap:6px"><span style="font-family:'IBM Plex Mono',monospace;font-size:20px;color:#8A8B8F">CYCLE TIME</span><span style="font-size:30px;font-family:'IBM Plex Mono',monospace">[mm:ss]</span></div>
+      </div>
+      <div style="border:3px solid oklch(0.74 0.17 150);padding:28px;display:flex;flex-direction:column;gap:20px;align-self:start;outline:6px solid #FFFFFF;outline-offset:10px">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:12px"><span style="font-family:'IBM Plex Mono',monospace;font-size:22px;letter-spacing:0.08em;color:oklch(0.8 0.15 150)">NEXT MODEL ▸ CHANGE</span><span style="width:52px;height:52px;flex:none;border-radius:50%;background:#FFFFFF;color:#1A1A18;display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:700">2</span></div>
+        <div style="background:oklch(0.74 0.17 150);color:#0F1012;font-size:64px;font-weight:700;padding:16px 24px;letter-spacing:0.02em">RHD</div>
+        <span style="font-size:26px;line-height:1.35;color:#C9C9C6">Prepare RHD camera panel</span>
+      </div>
+    </div>
+    <div style="display:flex;gap:20px;align-items:center;border-top:2px solid #1A1A18;padding-top:24px;font-size:28px">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:22px;letter-spacing:0.06em;color:#77756F;white-space:nowrap">FROM A DISTANCE</span>
+      <span style="width:120px;height:44px;background:oklch(0.6 0.17 255)"></span>
+      <span style="width:120px;height:44px;background:oklch(0.74 0.17 150)"></span>
+      <span style="color:#1A1A18;font-weight:600">✓ Clearly different at a glance</span>
+    </div>
+  </div>
+</section>
+
+<section data-label="Scanner issue" data-screen-label="07" data-speaker-notes="A related issue. The part can only be scanned for a car once the previous car has moved to the next station. It is hard to see when that has happened. If the scan is too early, the scanner band still responds as if it worked, but the scan is not registered for the car." style="background:#F4F3EF;color:#1A1A18;padding:110px 140px;box-sizing:border-box;display:flex;flex-direction:column;gap:56px;font-family:'IBM Plex Sans',sans-serif">
+  <div style="display:flex;flex-direction:column;gap:28px">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:26px;letter-spacing:0.08em;color:#B8561B">06 — PROBLEM 3 · HAND SCANNER</span>
+    <h2 style="margin:0;font-size:68px;line-height:1.08;font-weight:600;letter-spacing:-0.015em;max-width:1500px;text-wrap:pretty">The scanner band responds even when the scan isn't registered</h2>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:20px">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:24px;letter-spacing:0.06em;color:#77756F">TODAY</span>
+    <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px">
+      <div style="background:#FFFFFF;border:1px solid #D6D4CD;padding:32px 30px;display:flex;flex-direction:column;gap:18px"><span style="font-family:'IBM Plex Mono',monospace;font-size:24px;color:#77756F">01</span><span style="font-size:30px;font-weight:600;line-height:1.3;color:#1A1A18">Previous car may not have reached the next station yet. Hard to see.</span></div>
+      <div style="background:#FFFFFF;border:1px solid #D6D4CD;padding:32px 30px;display:flex;flex-direction:column;gap:18px"><span style="font-family:'IBM Plex Mono',monospace;font-size:24px;color:#77756F">02</span><span style="font-size:30px;font-weight:600;line-height:1.3;color:#1A1A18">Operator scans the part for the next car</span></div>
+      <div style="background:#FBE9E6;border:3px solid oklch(0.56 0.21 27);padding:32px 30px;display:flex;flex-direction:column;gap:18px"><span style="font-family:'IBM Plex Mono',monospace;font-size:24px;color:oklch(0.48 0.19 27)">03</span><span style="font-size:30px;font-weight:600;line-height:1.3;color:oklch(0.42 0.17 27)">Scanner band gives a response as if the scan worked</span></div>
+      <div style="background:#FBE9E6;border:3px solid oklch(0.56 0.21 27);padding:32px 30px;display:flex;flex-direction:column;gap:18px"><span style="font-family:'IBM Plex Mono',monospace;font-size:24px;color:oklch(0.48 0.19 27)">04</span><span style="font-size:30px;font-weight:600;line-height:1.3;color:oklch(0.42 0.17 27)">Scan not registered for the car. False scan.</span></div>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:48px 1fr;gap:24px;align-items:start;background:#E6EFE8;padding:32px 36px;font-size:32px;line-height:1.4"><span style="width:48px;height:48px;border-radius:50%;background:#1A1A18;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:28px">✓</span><span><b style="font-weight:600">Needed:</b> if the scan is not registered for the car, the scanner band should give no positive response, or a clear failure signal, so the operator knows to scan again.</span></div>
+</section>
+
+<section data-label="Scanner animation" data-screen-label="08" data-speaker-notes="Left: today. The previous car is still in Station 2. I scan the camera panel for the next car, the band responds as if it worked, but the system has not registered it. Right: proposed. The band shows a clear failure, I wait for the car to leave, scan again, and it registers." style="background:#F4F3EF;color:#1A1A18;padding:90px 140px;box-sizing:border-box;display:flex;flex-direction:column;gap:44px;font-family:'IBM Plex Sans',sans-serif">
+  <div style="display:flex;flex-direction:column;gap:24px">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:26px;letter-spacing:0.08em;color:#B8561B">06b — PROBLEM 3 &amp; SOLUTION 3 · SCANNER IN ACTION</span>
+    <h2 style="margin:0;font-size:64px;line-height:1.08;font-weight:600;letter-spacing:-0.015em">Scanning before the previous car has left</h2>
+  </div>
+  <div style="display:grid;grid-template-columns:800px 800px;gap:40px">
+    <div style="position:relative;width:800px;height:660px;background:#FFFFFF;border:2px solid oklch(0.56 0.21 27);overflow:hidden">
+      <span style="position:absolute;left:24px;top:22px;font-family:'IBM Plex Mono',monospace;font-size:24px;font-weight:500;letter-spacing:0.08em;color:oklch(0.48 0.19 27)">TODAY</span>
+      <div style="position:absolute;left:24px;top:80px;width:400px;height:180px;background:#ECEBE6"></div>
+      <div style="position:absolute;left:424px;top:80px;width:352px;height:180px;background:#F4F3EF"></div>
+      <div style="position:absolute;left:423px;top:72px;width:0;height:196px;border-left:3px dashed #77756F"></div>
+      <span style="position:absolute;left:40px;top:226px;font-family:'IBM Plex Mono',monospace;font-size:20px;color:#4A4945">STATION 2</span>
+      <span style="position:absolute;left:440px;top:226px;font-family:'IBM Plex Mono',monospace;font-size:20px;color:#4A4945">NEXT STATION</span>
+      <div style="position:absolute;left:40px;top:300px;width:220px;height:250px;box-sizing:border-box;border:2px solid #D6D4CD;background:#FAFAF8;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px">
+        <div style="width:120px;height:120px;background:repeating-conic-gradient(#1A1A18 0 25%,#FFFFFF 0 50%) 0 0/24px 24px;border:8px solid #FFFFFF;outline:2px solid #1A1A18"></div>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:20px;color:#4A4945">CAMERA PANEL QR</span>
+      </div>
+      <div style="position:absolute;left:400px;top:300px;width:376px;height:220px;box-sizing:border-box;background:#1A1A18;border-radius:28px;padding:16px"><div style="width:100%;height:100%;background:#0F1012;border-radius:16px"></div></div>
+      <span style="position:absolute;left:400px;top:528px;width:376px;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:20px;color:#4A4945">HAND SCANNER BAND</span>
+      <div style="position:absolute;left:24px;top:584px;width:752px;height:56px;border-top:1px solid #D6D4CD"></div>
+      <span style="position:absolute;left:24px;top:604px;font-family:'IBM Plex Mono',monospace;font-size:20px;color:#77756F">SYSTEM RECORD</span>
+      {{ scanToday }}
+    </div>
+    <div style="position:relative;width:800px;height:660px;background:#FFFFFF;border:2px solid #1A1A18;overflow:hidden">
+      <span style="position:absolute;left:24px;top:22px;font-family:'IBM Plex Mono',monospace;font-size:24px;font-weight:500;letter-spacing:0.08em;color:#1A1A18">PROPOSED</span>
+      <div style="position:absolute;left:24px;top:80px;width:400px;height:180px;background:#ECEBE6"></div>
+      <div style="position:absolute;left:424px;top:80px;width:352px;height:180px;background:#F4F3EF"></div>
+      <div style="position:absolute;left:423px;top:72px;width:0;height:196px;border-left:3px dashed #77756F"></div>
+      <span style="position:absolute;left:40px;top:226px;font-family:'IBM Plex Mono',monospace;font-size:20px;color:#4A4945">STATION 2</span>
+      <span style="position:absolute;left:440px;top:226px;font-family:'IBM Plex Mono',monospace;font-size:20px;color:#4A4945">NEXT STATION</span>
+      <div style="position:absolute;left:40px;top:300px;width:220px;height:250px;box-sizing:border-box;border:2px solid #D6D4CD;background:#FAFAF8;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px">
+        <div style="width:120px;height:120px;background:repeating-conic-gradient(#1A1A18 0 25%,#FFFFFF 0 50%) 0 0/24px 24px;border:8px solid #FFFFFF;outline:2px solid #1A1A18"></div>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:20px;color:#4A4945">CAMERA PANEL QR</span>
+      </div>
+      <div style="position:absolute;left:400px;top:300px;width:376px;height:220px;box-sizing:border-box;background:#1A1A18;border-radius:28px;padding:16px"><div style="width:100%;height:100%;background:#0F1012;border-radius:16px"></div></div>
+      <span style="position:absolute;left:400px;top:528px;width:376px;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:20px;color:#4A4945">HAND SCANNER BAND</span>
+      <div style="position:absolute;left:24px;top:584px;width:752px;height:56px;border-top:1px solid #D6D4CD"></div>
+      <span style="position:absolute;left:24px;top:604px;font-family:'IBM Plex Mono',monospace;font-size:20px;color:#77756F">SYSTEM RECORD</span>
+      {{ scanNew }}
+    </div>
+  </div>
+</section>
+
+<section data-label="Wrong part scan" data-screen-label="09" data-speaker-notes="Another part of problem 3. When I scan the right part, the band vibrates and the screen turns green. When I scan the wrong part, the band still vibrates the same way, and the screen just stays dark. There is no clear warning. The buzz is felt, not read, so operators trust it and stop looking at the screen. No buzz for a wrong part would be noticed instantly." style="background:#F4F3EF;color:#1A1A18;padding:90px 140px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;gap:32px;font-family:'IBM Plex Sans',sans-serif">
+  <div style="display:flex;flex-direction:column;gap:24px">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:26px;letter-spacing:0.08em;color:#B8561B">06c — PROBLEM 4 &amp; SOLUTION 4 · WRONG-PART SCAN</span>
+    <h2 style="margin:0;font-size:64px;line-height:1.08;font-weight:600;letter-spacing:-0.015em">A wrong part vibrates like a right one</h2>
+  </div>
+  <div style="display:grid;grid-template-columns:800px 800px;gap:40px">
+    <div style="background:#FFFFFF;border:2px solid oklch(0.56 0.21 27);display:flex;flex-direction:column">
+      <span style="padding:22px 24px;font-family:'IBM Plex Mono',monospace;font-size:24px;font-weight:500;letter-spacing:0.08em;color:oklch(0.48 0.19 27)">TODAY</span>
+      <div style="position:relative;height:210px;border-top:1px solid #D6D4CD">
+        <div style="position:absolute;left:24px;top:30px;width:200px;display:flex;flex-direction:column;gap:14px;align-items:flex-start">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:20px;font-weight:500;padding:4px 10px;background:#E6EFE8;color:oklch(0.45 0.15 150)">RIGHT PART</span>
+          <div style="width:84px;height:84px;background:repeating-conic-gradient(#1A1A18 0 25%,#FFFFFF 0 50%) 0 0/21px 21px;border:6px solid #FFFFFF;outline:2px solid #1A1A18"></div>
+        </div>
+        <span style="position:absolute;left:290px;top:176px;width:200px;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:18px;color:#77756F">BAND</span>
+        <span style="position:absolute;left:540px;top:176px;width:220px;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:18px;color:#77756F">SCREEN</span>
+        {{ wpTodayRight }}
+      </div>
+      <div style="position:relative;height:210px;border-top:1px solid #D6D4CD">
+        <div style="position:absolute;left:24px;top:30px;width:200px;display:flex;flex-direction:column;gap:14px;align-items:flex-start">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:20px;font-weight:500;padding:4px 10px;background:#FBE9E6;color:oklch(0.48 0.19 27)">WRONG PART</span>
+          <div style="width:84px;height:84px;background:repeating-conic-gradient(#1A1A18 0 25%,#FFFFFF 0 50%) 0 0/21px 21px;border:6px solid #FFFFFF;outline:2px solid #1A1A18"></div>
+        </div>
+        <span style="position:absolute;left:290px;top:176px;width:200px;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:18px;color:#77756F">BAND</span>
+        <span style="position:absolute;left:540px;top:176px;width:220px;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:18px;color:#77756F">SCREEN</span>
+        {{ wpTodayWrong }}
+      </div>
+      <div style="border-top:1px solid #D6D4CD;padding:20px 24px;font-size:26px;line-height:1.4;font-weight:600;color:oklch(0.48 0.19 27)">✕ Same vibration for both. Wrong part shows nothing on screen.</div>
+    </div>
+    <div style="background:#FFFFFF;border:2px solid #1A1A18;display:flex;flex-direction:column">
+      <span style="padding:22px 24px;font-family:'IBM Plex Mono',monospace;font-size:24px;font-weight:500;letter-spacing:0.08em;color:#1A1A18">PROPOSED</span>
+      <div style="position:relative;height:210px;border-top:1px solid #D6D4CD">
+        <div style="position:absolute;left:24px;top:30px;width:200px;display:flex;flex-direction:column;gap:14px;align-items:flex-start">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:20px;font-weight:500;padding:4px 10px;background:#E6EFE8;color:oklch(0.45 0.15 150)">RIGHT PART</span>
+          <div style="width:84px;height:84px;background:repeating-conic-gradient(#1A1A18 0 25%,#FFFFFF 0 50%) 0 0/21px 21px;border:6px solid #FFFFFF;outline:2px solid #1A1A18"></div>
+        </div>
+        <span style="position:absolute;left:290px;top:176px;width:200px;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:18px;color:#77756F">BAND</span>
+        <span style="position:absolute;left:540px;top:176px;width:220px;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:18px;color:#77756F">SCREEN</span>
+        {{ wpNewRight }}
+      </div>
+      <div style="position:relative;height:210px;border-top:1px solid #D6D4CD">
+        <div style="position:absolute;left:24px;top:30px;width:200px;display:flex;flex-direction:column;gap:14px;align-items:flex-start">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:20px;font-weight:500;padding:4px 10px;background:#FBE9E6;color:oklch(0.48 0.19 27)">WRONG PART</span>
+          <div style="width:84px;height:84px;background:repeating-conic-gradient(#1A1A18 0 25%,#FFFFFF 0 50%) 0 0/21px 21px;border:6px solid #FFFFFF;outline:2px solid #1A1A18"></div>
+        </div>
+        <span style="position:absolute;left:290px;top:176px;width:200px;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:18px;color:#77756F">BAND</span>
+        <span style="position:absolute;left:540px;top:176px;width:220px;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:18px;color:#77756F">SCREEN</span>
+        {{ wpNewWrong }}
+      </div>
+      <div style="border-top:1px solid #D6D4CD;padding:20px 24px;font-size:26px;line-height:1.4;font-weight:600;color:#1A1A18">✓ Wrong part: no buzz at all, and a red screen</div>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:56px 1fr;gap:24px;align-items:start;background:#1A1A18;color:#F3F2EE;padding:28px 36px;font-size:28px;line-height:1.4">
+    <span style="width:56px;height:56px;border-radius:50%;background:oklch(0.78 0.16 55);color:#1A1A18;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:30px">?</span>
+    <span><b style="font-weight:600">Why the buzz matters:</b> the vibration is felt through touch, faster than reading a screen. With hands and eyes on the car, the operator learns to treat the buzz as “scan done” and stops checking the screen. If a wrong part gives <b style="font-weight:600">no buzz</b>, the missing feeling is noticed straight away.</span>
+  </div>
+</section>
+
+<section data-label="Impact" data-screen-label="10" data-speaker-notes="Focus on risk. Use real examples from the line if you have them." style="background:#F4F3EF;color:#1A1A18;padding:120px 140px;box-sizing:border-box;display:flex;flex-direction:column;gap:72px;font-family:'IBM Plex Sans',sans-serif">
+  <div style="display:flex;flex-direction:column;gap:32px">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:26px;letter-spacing:0.08em;color:#B8561B">07 — IMPACT</span>
+    <h2 style="margin:0;font-size:72px;line-height:1.08;font-weight:600;letter-spacing:-0.015em">Why it matters</h2>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;border-top:2px solid #1A1A18">
+    <div style="padding:48px 64px 48px 0;border-bottom:1px solid #D6D4CD;border-right:1px solid #D6D4CD;display:flex;flex-direction:column;gap:16px"><span style="font-size:44px;font-weight:600">Quality</span><span style="font-size:30px;line-height:1.45;color:#4A4945">Wrong-side camera panel fitted, or a part not recorded after a false scan. Caught later or sent to rework.</span></div>
+    <div style="padding:48px 0 48px 64px;border-bottom:1px solid #D6D4CD;display:flex;flex-direction:column;gap:16px"><span style="font-size:44px;font-weight:600">Cycle time</span><span style="font-size:30px;line-height:1.45;color:#4A4945">Swapping parts mid-cycle eats into the station's takt time.</span></div>
+    <div style="padding:48px 64px 48px 0;border-right:1px solid #D6D4CD;display:flex;flex-direction:column;gap:16px"><span style="font-size:44px;font-weight:600">Line flow</span><span style="font-size:30px;line-height:1.45;color:#4A4945">Delays at Station 2 can push the car past the zone or stop the line.</span></div>
+    <div style="padding:48px 0 48px 64px;display:flex;flex-direction:column;gap:16px"><span style="font-size:44px;font-weight:600">Operator</span><span style="font-size:30px;line-height:1.45;color:#4A4945">Rushed fitment increases strain and error rate on both LH and RH sides.</span></div>
+  </div>
+</section>
+
+<section data-label="Root cause" data-screen-label="11" data-speaker-notes="This is the likely cause from the operator's view. Engineering should confirm with the system owner." style="background:#171716;color:#F3F2EE;padding:120px 140px;box-sizing:border-box;display:grid;grid-template-columns:1fr 1.1fr;gap:120px;align-items:center;font-family:'IBM Plex Sans',sans-serif">
+  <div style="display:flex;flex-direction:column;gap:40px">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:26px;letter-spacing:0.08em;color:oklch(0.78 0.16 55)">08 — LIKELY CAUSE · PROBLEM 2</span>
+    <h2 style="margin:0;font-size:80px;line-height:1.06;font-weight:600;letter-spacing:-0.015em;text-wrap:pretty">The monitor shows the current car, not what's coming next.</h2>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:0;border-top:1px solid #3A3936">
+    <div style="display:grid;grid-template-columns:120px 1fr;gap:24px;padding:36px 0;border-bottom:1px solid #3A3936;font-size:32px;line-height:1.4"><span style="font-family:'IBM Plex Mono',monospace;font-size:26px;color:#8E8C85;padding-top:4px">WHY 1</span><span>Wrong or late part pick at Station 2</span></div>
+    <div style="display:grid;grid-template-columns:120px 1fr;gap:24px;padding:36px 0;border-bottom:1px solid #3A3936;font-size:32px;line-height:1.4"><span style="font-family:'IBM Plex Mono',monospace;font-size:26px;color:#8E8C85;padding-top:4px">WHY 2</span><span>Operator doesn't know the drive side until the car arrives</span></div>
+    <div style="display:grid;grid-template-columns:120px 1fr;gap:24px;padding:36px 0;border-bottom:1px solid #3A3936;font-size:32px;line-height:1.4"><span style="font-family:'IBM Plex Mono',monospace;font-size:26px;color:#8E8C85;padding-top:4px">WHY 3</span><span>Monitor has no upcoming-vehicle or variant-change information</span></div>
+    <div style="display:grid;grid-template-columns:120px 1fr;gap:24px;padding:36px 0;border-bottom:1px solid #3A3936;font-size:32px;line-height:1.4"><span style="font-family:'IBM Plex Mono',monospace;font-size:26px;color:#8E8C85;padding-top:4px">WHY 4</span><span>Variant sequence isn't passed to the station display <span style="color:#8E8C85">(to confirm)</span></span></div>
+  </div>
+</section>
+
+<section data-label="Proposed fixes" data-screen-label="12" data-speaker-notes="One fix for each problem. Ask engineering which are feasible." style="background:#F4F3EF;color:#1A1A18;padding:110px 140px;box-sizing:border-box;display:flex;flex-direction:column;gap:56px;font-family:'IBM Plex Sans',sans-serif">
+  <div style="display:flex;flex-direction:column;gap:28px">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:26px;letter-spacing:0.08em;color:#B8561B">09 — PROPOSED FIXES</span>
+    <h2 style="margin:0;font-size:72px;line-height:1.08;font-weight:600;letter-spacing:-0.015em">One fix for each problem</h2>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;flex:1">
+    <div style="display:flex;flex-direction:column;gap:0">
+      <div style="background:#FBE9E6;border:1px solid #EBC9C3;padding:24px 26px;display:flex;gap:16px;align-items:center;height:180px;box-sizing:border-box"><span style="width:48px;height:48px;flex:none;border-radius:50%;background:oklch(0.56 0.21 27);color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:26px">1</span><div style="display:flex;flex-direction:column;gap:4px"><span style="font-family:'IBM Plex Mono',monospace;font-size:20px;letter-spacing:0.06em;color:oklch(0.48 0.19 27)">PROBLEM 1</span><span style="font-size:26px;font-weight:600;line-height:1.25">LHD and RHD colours look alike</span></div></div>
+      <div style="height:48px;display:flex;align-items:center;justify-content:center;font-size:34px;color:#77756F">↓</div>
+      <div style="background:#FFFFFF;border:2px solid #1A1A18;padding:36px 30px;display:flex;flex-direction:column;gap:20px;flex:1">
+        <div style="display:flex;gap:16px;align-items:center"><span style="width:48px;height:48px;flex:none;border-radius:50%;background:#1A1A18;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:26px">1</span><span style="font-family:'IBM Plex Mono',monospace;font-size:22px;letter-spacing:0.06em;color:#1A1A18">SOLUTION 1</span></div>
+        <span style="font-size:32px;font-weight:600;line-height:1.2;text-wrap:pretty">Blue for LHD, green for RHD</span>
+        <span style="font-size:26px;line-height:1.45;color:#4A4945;text-wrap:pretty">Different colour families, so the variant is clear from a distance.</span>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:0">
+      <div style="background:#FBE9E6;border:1px solid #EBC9C3;padding:24px 26px;display:flex;gap:16px;align-items:center;height:180px;box-sizing:border-box"><span style="width:48px;height:48px;flex:none;border-radius:50%;background:oklch(0.56 0.21 27);color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:26px">2</span><div style="display:flex;flex-direction:column;gap:4px"><span style="font-family:'IBM Plex Mono',monospace;font-size:20px;letter-spacing:0.06em;color:oklch(0.48 0.19 27)">PROBLEM 2</span><span style="font-size:26px;font-weight:600;line-height:1.25">No warning before an RHD car</span></div></div>
+      <div style="height:48px;display:flex;align-items:center;justify-content:center;font-size:34px;color:#77756F">↓</div>
+      <div style="background:#FFFFFF;border:2px solid #1A1A18;padding:36px 30px;display:flex;flex-direction:column;gap:20px;flex:1">
+        <div style="display:flex;gap:16px;align-items:center"><span style="width:48px;height:48px;flex:none;border-radius:50%;background:#1A1A18;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:26px">2</span><span style="font-family:'IBM Plex Mono',monospace;font-size:22px;letter-spacing:0.06em;color:#1A1A18">SOLUTION 2</span></div>
+        <span style="font-size:32px;font-weight:600;line-height:1.2;text-wrap:pretty">“Next car ▸ RHD” pop-up</span>
+        <span style="font-size:26px;line-height:1.45;color:#4A4945;text-wrap:pretty">Shown as soon as an RHD car is registered at line entry.</span>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:0">
+      <div style="background:#FBE9E6;border:1px solid #EBC9C3;padding:24px 26px;display:flex;gap:16px;align-items:center;height:180px;box-sizing:border-box"><span style="width:48px;height:48px;flex:none;border-radius:50%;background:oklch(0.56 0.21 27);color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:26px">3</span><div style="display:flex;flex-direction:column;gap:4px"><span style="font-family:'IBM Plex Mono',monospace;font-size:20px;letter-spacing:0.06em;color:oklch(0.48 0.19 27)">PROBLEM 3</span><span style="font-size:26px;font-weight:600;line-height:1.25">Early scan buzzes but doesn’t register</span></div></div>
+      <div style="height:48px;display:flex;align-items:center;justify-content:center;font-size:34px;color:#77756F">↓</div>
+      <div style="background:#FFFFFF;border:2px solid #1A1A18;padding:36px 30px;display:flex;flex-direction:column;gap:20px;flex:1">
+        <div style="display:flex;gap:16px;align-items:center"><span style="width:48px;height:48px;flex:none;border-radius:50%;background:#1A1A18;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:26px">3</span><span style="font-family:'IBM Plex Mono',monospace;font-size:22px;letter-spacing:0.06em;color:#1A1A18">SOLUTION 3</span></div>
+        <span style="font-size:32px;font-weight:600;line-height:1.2;text-wrap:pretty">Failure signal for unregistered scans</span>
+        <span style="font-size:26px;line-height:1.45;color:#4A4945;text-wrap:pretty">No positive buzz until the scan is registered for the car.</span>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:0">
+      <div style="background:#FBE9E6;border:1px solid #EBC9C3;padding:24px 26px;display:flex;gap:16px;align-items:center;height:180px;box-sizing:border-box"><span style="width:48px;height:48px;flex:none;border-radius:50%;background:oklch(0.56 0.21 27);color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:26px">4</span><div style="display:flex;flex-direction:column;gap:4px"><span style="font-family:'IBM Plex Mono',monospace;font-size:20px;letter-spacing:0.06em;color:oklch(0.48 0.19 27)">PROBLEM 4</span><span style="font-size:26px;font-weight:600;line-height:1.25">Wrong part buzzes like a right one</span></div></div>
+      <div style="height:48px;display:flex;align-items:center;justify-content:center;font-size:34px;color:#77756F">↓</div>
+      <div style="background:#FFFFFF;border:2px solid #1A1A18;padding:36px 30px;display:flex;flex-direction:column;gap:20px;flex:1">
+        <div style="display:flex;gap:16px;align-items:center"><span style="width:48px;height:48px;flex:none;border-radius:50%;background:#1A1A18;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:26px">4</span><span style="font-family:'IBM Plex Mono',monospace;font-size:22px;letter-spacing:0.06em;color:#1A1A18">SOLUTION 4</span></div>
+        <span style="font-size:32px;font-weight:600;line-height:1.2;text-wrap:pretty">No buzz and a red screen for a wrong part</span>
+        <span style="font-size:26px;line-height:1.45;color:#4A4945;text-wrap:pretty">The missing buzz is noticed straight away.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+</x-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { t: 0 };
+  componentDidMount() {
+    const start = performance.now();
+    const tick = (now) => { this.setState({ t: now - start }); this.raf = requestAnimationFrame(tick); };
+    this.raf = requestAnimationFrame(tick);
+  }
+  componentWillUnmount() { cancelAnimationFrame(this.raf); }
+  renderVals() {
+    const h = React.createElement, mono = "'IBM Plex Mono',monospace";
+    const BLUE = 'oklch(0.6 0.17 255)', GREEN = 'oklch(0.74 0.17 150)';
+    const CYCLE = 9000;
+    const rhd = Math.floor(this.state.t / CYCLE) % 2 === 0;
+    const t = this.state.t % CYCLE;
+    const fade = (a, b) => Math.max(0, Math.min(1, (t - a) / (b - a)));
+    const ease = (p) => p < .5 ? 2*p*p : 1 - Math.pow(-2*p+2,2)/2;
+    const seg = (a, b, x0, x1) => x0 + (x1 - x0) * ease(Math.max(0, Math.min(1, (t - a) / (b - a))));
+    const nx = t < 1400 ? seg(0, 1400, -260, 70) : seg(2800, 3800, 70, 490);
+    const NC = rhd ? GREEN : BLUE, NT = rhd ? '#0F1012' : '#fff', nv = rhd ? 'RHD' : 'LHD';
+    const pulse = 0.5 + 0.5 * Math.sin(t / 140);
+    const on = t > 2000;
+    const line = [
+      h('div', { key: 'car', style: { position:'absolute', left: nx, top: 66, width: 240, height: 76, borderRadius: 12, background: NC, color: NT, display:'flex', alignItems:'center', justifyContent:'center', gap: 10, fontSize: 26, fontWeight: 700, border:'3px solid #1A1A18', boxSizing:'border-box' } }, h('span', { style: { fontFamily: mono, fontSize: 18, fontWeight: 500 } }, 'NEXT'), nv)
+    ];
+    if (t > 1400) line.push(h('div', { key: 'reg', style: { position:'absolute', left: 50, top: 156, width: 280, textAlign:'center', fontFamily: mono, fontSize: 20, fontWeight: 500, background:'#FFFFFF', border:'2px solid #1A1A18', padding:'3px 0', boxSizing:'border-box', opacity: fade(1400, 1700) } }, 'REGISTERED: ' + nv));
+    if (on && rhd) line.push(h('div', { key: 'pop', style: { position:'absolute', left: 1308, top: 92, width: 314, height: 100, boxSizing:'border-box', background:'#0F1012', border:'3px solid ' + GREEN, boxShadow:'0 0 ' + (10 + 16*pulse) + 'px ' + GREEN, display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', gap: 2, opacity: fade(2000, 2300) } }, h('span', { style: { fontFamily: mono, fontSize: 16, color: GREEN } }, 'POP-UP'), h('span', { style: { fontSize: 28, fontWeight: 700, color:'#F3F2EE', whiteSpace:'nowrap' } }, 'NEXT CAR ▸ RHD')));
+    if (on && !rhd) line.push(h('div', { key: 'nop', style: { position:'absolute', left: 1308, top: 92, width: 314, height: 100, display:'flex', alignItems:'center', justifyContent:'center', fontFamily: mono, fontSize: 22, color:'#8A8B8F', opacity: fade(2000, 2300) } }, 'Next: LHD · no pop-up'));
+    const chart = [];
+    if (on) chart.push(h('div', { key: 'hl', style: { position:'absolute', left: 970, top: rhd ? -10 : 260, width: 350, height: 130, boxSizing:'border-box', border:'5px solid ' + (rhd ? GREEN : '#1A1A18'), boxShadow: rhd ? '0 0 ' + (10 + 16*pulse) + 'px ' + GREEN : 'none', opacity: fade(2000, 2300), pointerEvents:'none' } }));
+    if (false) chart.push(h('div', { key: 'end', style: { position:'absolute', left: 1352, top: 127, width: 296, height: 126, boxSizing:'border-box', border:'5px solid ' + NC, opacity: fade(5800, 6100), pointerEvents:'none' } }));
+    const caption = h('div', { style: { display:'flex', flexDirection:'column', alignItems:'flex-end', gap: 10, flex:'none' } },
+      h('span', { style: { fontFamily: mono, fontSize: 20, letterSpacing:'0.08em', color:'#77756F' } }, rhd ? 'EXAMPLE A' : 'EXAMPLE B'),
+      h('div', { style: { display:'flex', gap: 10, alignItems:'center', fontSize: 24, whiteSpace:'nowrap' } },
+        h('span', null, 'Current LHD · next car registered'),
+        h('span', { style: { background: NC, color: NT, fontWeight: 700, padding:'2px 10px' } }, nv),
+        h('span', { style: { fontWeight: 600 } }, rhd ? '→ pop-up' : '→ no pop-up')));
+    return { wfLine: h(React.Fragment, null, line), wfChart: h(React.Fragment, null, chart), wfCaption: caption, scanToday: this.scanPanel(false), scanNew: this.scanPanel(true),
+      wpTodayRight: this.wpCell(false, true), wpTodayWrong: this.wpCell(false, false),
+      wpNewRight: this.wpCell(true, true), wpNewWrong: this.wpCell(true, false) };
+  }
+  wpCell(proposed, right) {
+    const h = React.createElement, M = "'IBM Plex Mono',monospace";
+    const RED = 'oklch(0.56 0.21 27)', GRN = 'oklch(0.74 0.17 150)';
+    const t = this.state.t % 4000;
+    const beam = t < 350;
+    const long = false;
+    const noBuzz = proposed && !right;
+    const vibrating = !noBuzz && t > 350 && t < 1100;
+    const shown = t > 350 && t < 3600;
+    const dx = vibrating ? Math.sin(t / (long ? 40 : 22)) * (long ? 7 : 5) : 0;
+    let bg = '#0F1012', txt = null, txtColor = '#fff';
+    if (shown && right) { bg = GRN; txt = '✓ OK'; txtColor = '#0F1012'; }
+    if (shown && !right && proposed) { bg = RED; txt = '✕ WRONG PART'; }
+    return h(React.Fragment, null,
+      h('div', { style: { position:'absolute', left: 226, top: 82, width: 64, height: 5, background: RED, boxShadow: '0 0 10px ' + RED, opacity: beam ? 1 : 0 } }),
+      h('div', { style: { position:'absolute', left: 290, top: 40, width: 200, height: 120, boxSizing:'border-box', background:'#1A1A18', borderRadius: 22, padding: 12, transform: 'translateX(' + dx + 'px)' } },
+        h('div', { style: { width:'100%', height:'100%', background:'#2A2B2E', borderRadius: 12, display:'flex', alignItems:'center', justifyContent:'center', fontFamily: M, fontSize: 20, color: vibrating ? '#F3F2EE' : '#6A6B6F' } }, vibrating ? '≋ BUZZ' : (noBuzz && shown ? 'NO BUZZ' : '—'))),
+      h('div', { style: { position:'absolute', left: 540, top: 40, width: 220, height: 120, boxSizing:'border-box', background: bg, border: '6px solid #2A2B2E', display:'flex', alignItems:'center', justifyContent:'center', fontSize: 22, fontWeight: 700, color: txtColor, whiteSpace:'nowrap', transition:'background 150ms' } }, txt || (shown ? h('span', { style: { fontFamily: M, fontSize: 18, fontWeight: 400, color:'#6A6B6F' } }, 'no signal') : '')),
+      (!proposed && !right && shown) ? h('div', { style: { position:'absolute', left: 532, top: 32, width: 236, height: 136, boxSizing:'border-box', border: '4px dashed ' + RED } }) : null
+    );
+  }
+  scanPanel(proposed) {
+    const h = React.createElement, M = "'IBM Plex Mono',monospace";
+    const t = this.state.t % 10000;
+    const RED = 'oklch(0.56 0.21 27)', RDK = 'oklch(0.48 0.19 27)', GRN = 'oklch(0.74 0.17 150)', GDK = 'oklch(0.45 0.15 150)';
+    const carX = t < 1200 ? 150 : Math.min(470, 150 + (t - 1200) / 5000 * 250);
+    const passed = carX >= 400;
+    const fadeIn = (a) => Math.max(0, Math.min(1, (t - a) / 250));
+    const beamOn = (t > 2600 && t < 2900) || (proposed && t > 6400 && t < 6700);
+    const k = [];
+    k.push(h('div', { key: 'car', style: { position:'absolute', left: 24 + carX, top: 125, width: 220, height: 90, background:'#3A3936', color:'#F3F2EE', display:'flex', alignItems:'center', justifyContent:'center', fontFamily: M, fontSize: 20, borderRadius: 10 } }, 'PREVIOUS CAR'));
+    k.push(h('span', { key: 'st', style: { position:'absolute', right: 24, top: 22, fontFamily: M, fontSize: 20, fontWeight: 500, padding:'4px 10px', background: passed ? '#E6EFE8' : '#FBE9E6', color: passed ? GDK : RDK } }, passed ? 'PREVIOUS CAR HAS LEFT' : 'PREVIOUS CAR STILL IN STATION 2'));
+    k.push(h('div', { key: 'beam', style: { position:'absolute', left: 260, top: 420, width: 140, height: 6, background: RED, boxShadow: '0 0 12px ' + RED, opacity: beamOn ? 1 : 0 } }));
+    let scr, rec;
+    const big = (txt, c) => h('span', { style: { fontSize: 34, fontWeight: 700, color: c, whiteSpace: 'nowrap' } }, txt);
+    const small = (txt) => h('span', { style: { fontFamily: M, fontSize: 20, color: '#C9C9C6', textAlign:'center' } }, txt);
+    if (t < 2900) { scr = [big('READY', '#8A8B8F'), small('Scan part QR')]; rec = h('span', { style: { color:'#77756F' } }, '—'); }
+    else if (!proposed) {
+      scr = [big('✓ SCANNED', GRN), small('Beep. Looks OK')];
+      rec = t > 3300 ? h('span', { style: { color: RDK, fontWeight: 600, opacity: fadeIn(3300) } }, '✕ Not registered for next car. False scan.') : h('span', { style: { color:'#77756F' } }, '—');
+    } else if (t < 6700) {
+      scr = [big('✕ NOT REGISTERED', RED), small('Previous car still in station. Wait.')];
+      rec = h('span', { style: { color:'#77756F' } }, 'Waiting for valid scan');
+    } else {
+      scr = [big('✓ REGISTERED', GRN), small('Scan saved for next car')];
+      rec = h('span', { style: { color: GDK, fontWeight: 600, opacity: fadeIn(6700) } }, '✓ Registered for next car');
+    }
+    k.push(h('div', { key: 'scr', style: { position:'absolute', left: 416, top: 316, width: 344, height: 188, display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', gap: 12, padding: 12, boxSizing:'border-box' } }, ...scr));
+    k.push(h('div', { key: 'rec', style: { position:'absolute', left: 230, top: 600, fontSize: 26 } }, rec));
+    return h(React.Fragment, null, k);
+  }
+}
+</script>
+</body>
+</html>
